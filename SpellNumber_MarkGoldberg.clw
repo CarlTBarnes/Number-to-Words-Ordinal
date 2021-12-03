@@ -3,7 +3,9 @@
 !Note: the Prototype places the passed Amount in a REAL which I would change to a STRING or *DECIMAL.
 !I would be concerned about the REAL getting a penny wrong, probably not but there is a reason Clarion added DECIMALs.
 !The REAL is assinged to a lcl:InputNum DECIMAL(28,2) so no potential for penny errors.
-
+!
+!Note: this function is different in that it adds commas every 3 digits to the worded amount, nice!
+!Note: this function is different in that it does NOT Hyphenate numbers 21 to 99 e.g. Twenty-One. See TestMoney2Words for correction.
 !=====================================================================================
 SpellNum                  PROCEDURE(REAL pInputNum)!,STRING
 !Region Documentation

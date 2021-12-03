@@ -134,6 +134,7 @@ CheckQAssign    PROCEDURE(STRING TheAmount)
     SingleDate=TODAY()
     OPEN(Window)
     ?List:TestQ{PROP:LineHeight}=1+?List:TestQ{PROP:LineHeight}
+    ?List:CheckQ{PROP:LineHeight}=1+?List:CheckQ{PROP:LineHeight}
     DOO.SmallShowSync()
     DOO.InitSample()
     ACCEPT
@@ -508,7 +509,7 @@ RetNum    PSTRING(256)
 
 ThreeDigitsRtn  ROUTINE
     IF Hundreds
-       RetNum=RetNum &' '& CLIP(Cardinal[Hundreds]) & ' Hundred' !!!CHOOSE(Tens+Ones+MoreLater=0,' Hundredth',' Hundred')
+       RetNum=RetNum &' '& CLIP(Cardinal[Hundreds]) & ' Hundred'
     END
     CASE Tens
     OF 0 ; IF Ones THEN 
